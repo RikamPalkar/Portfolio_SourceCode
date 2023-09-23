@@ -1,0 +1,35 @@
+﻿<div class="auto-hiding-nav-menu" 
+     @onmouseover="ExpandNavMenu" 
+     @onmouseout="CollapseNavMenu">
+    <nav class="nav-menu @(collapseNavMenu ? "collapsed" : "expand")">
+        <div>
+            <NavLink class="nav-link" href="https://rikampalkar.github.io/" Match="NavLinkMatch.All">
+                <span class="bi bi-house sidebar-icon" aria-hidden="true">
+                    <span class="nav-link-text">Home</span>
+                </span>
+            </NavLink>
+            <NavLink class="nav-link" href="counter">
+                <span class="bi bi-controller sidebar-icon">
+                    <span class="nav-link-text">Snake</span>
+                </span>
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+    private bool isHovered = false;
+
+    private void ExpandNavMenu()
+    {
+        isHovered = true;
+        if (collapseNavMenu) collapseNavMenu = false;
+    }
+
+    private void CollapseNavMenu()
+    {
+        isHovered = false;
+        if (!collapseNavMenu) collapseNavMenu = true;
+    }
+}
