@@ -54,28 +54,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="bootstrap" Version="5.3.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.8" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\sample-data\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\js\bootstrap.bundle.js" />
-    <None Include="wwwroot\js\bootstrap.bundle.js.map" />
-    <None Include="wwwroot\js\bootstrap.bundle.min.js" />
-    <None Include="wwwroot\js\bootstrap.bundle.min.js.map" />
-    <None Include="wwwroot\js\bootstrap.esm.js" />
-    <None Include="wwwroot\js\bootstrap.esm.js.map" />
-    <None Include="wwwroot\js\bootstrap.esm.min.js" />
-    <None Include="wwwroot\js\bootstrap.esm.min.js.map" />
-    <None Include="wwwroot\js\bootstrap.js" />
-    <None Include="wwwroot\js\bootstrap.js.map" />
-    <None Include="wwwroot\js\bootstrap.min.js" />
-    <None Include="wwwroot\js\bootstrap.min.js.map" />
   </ItemGroup>
 
 </Project>

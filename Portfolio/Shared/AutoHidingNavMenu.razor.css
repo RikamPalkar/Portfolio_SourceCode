@@ -35,6 +35,7 @@
     transition: opacity 0.3s ease;
     margin-left: 0.5rem;
     font-size: 16px;
+    margin-top: 4px;
 }
 
 .nav-link:hover .nav-link-text {
