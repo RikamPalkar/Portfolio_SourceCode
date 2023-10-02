@@ -1,0 +1,48 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+body {
+    background-color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif; 
+    color: #fff;
+}
+
+.board {
+    width: 31rem;
+    height: 31rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 10rem;
+    height: 10rem;
+    border: 2px solid #fff;
+    margin-right: 4px;
+    border-radius: 30px;
+    background: #142A1F;
+    opacity: 80;
+}
+
+    .square:hover {
+        background: #022724;
+        cursor: pointer;
+    }
+
+.char {
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 800;
+    margin-top: 15%;
+    color: #43B0A6;
+    font-family: 'Roboto', sans-serif;
+}
