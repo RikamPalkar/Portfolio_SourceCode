@@ -7,8 +7,6 @@ namespace Portfolio.Pages.TicTacToe
 	{
         #region [Fields]
 
-        readonly char player = 'o';
-
         readonly char[,] board = { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
 
         readonly List<List<int[]>> combos = new()
@@ -31,16 +29,16 @@ namespace Portfolio.Pages.TicTacToe
         protected override void OnInitialized()
         {
             Move move = MinMaxAlgorithm.FindBestMove(board);
-            board[move.row, move.col] = 'x';
+            board[move.row, move.col] = 'X';
         }
 
-        private async Task SquareCliked(int row, int col)
+        private async Task MakeMove(int row, int col)
         {
-            board[row, col] = player;
+            board[row, col] = PlayerSymbol.OPPONENT;
 
             Move move = MinMaxAlgorithm.FindBestMove(board);
             if (!(move.row == -1 && move.col == -1))
-                board[move.row, move.col] = 'x';
+                board[move.row, move.col] = 'X';
 
             foreach (var combo in combos)
             {
@@ -49,9 +47,8 @@ namespace Portfolio.Pages.TicTacToe
                 int[] third = combo[2];
                 if (board[first[0], first[1]] == ' ' || board[second[0], second[1]] == ' ' || board[third[0], third[1]] == ' ') continue;
                 if (board[first[0], first[1]] == board[second[0], second[1]] && board[second[0], second[1]] == board[third[0], third[1]] && board[first[0], first[1]] == board[third[0], third[1]])
-                {
-                    string winner = player == 'o' ? "AI" : "Player ONE";
-                    await JS.InvokeVoidAsync("ShowSwal", winner);
+                { 
+                    await JS.InvokeVoidAsync("ShowSwal", "AI");
                     await Task.Delay(1000);
                     ResetGame();
                 }

@@ -1,7 +1,7 @@
 ﻿@page "/tictactoe"
 @inject IJSRuntime JS
 
-<div>
+<div class="container">
     <h1>Play TicTacToe with AI</h1>
     <div class="board">
         @for (int i = 0; i < 3; i++)
@@ -11,10 +11,18 @@
             {
                 int col = j;
                 <div class="square"
-                     @onclick="()=> SquareCliked(row, col)">
+                     @onclick="()=> MakeMove(row, col)">
                     <h5 class="char">@board[row, col]</h5>
                 </div>
             }
         }
     </div>
+    <p class="message">
+        AI opponent powered by the MinMax algorithm.
+        <br />
+        Developed by <a href="https://www.linkedin.com/in/rikampalkar/" target="_blank" rel="noopener noreferrer">Rikam Palkar</a>,
+        <br />
+        it combines strategy and fun for an engaging experience.
+    </p>
 </div>
+

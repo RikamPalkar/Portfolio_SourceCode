@@ -1,11 +1,9 @@
-﻿namespace Portfolio.Pages.TicTacToe.Resources
+﻿using System.ComponentModel;
+
+namespace Portfolio.Pages.TicTacToe.Resources
 {
     public class MinMaxAlgorithm
     {
-        #region [Player symbols]
-        private static readonly char ai = 'x';
-        private static readonly char opponent = 'o';
-        #endregion
 
         #region [Brain]
         /// <summary>
@@ -44,7 +42,7 @@
                         if (board[i, j] == ' ')
                         {
                             // Make the move
-                            board[i, j] = ai;
+                            board[i, j] = PlayerSymbol.AI;
 
                             // Call minimax recursively and choose the maximum value
                             best = Math.Max(best, Minnimax(board,
@@ -72,7 +70,7 @@
                         if (board[i, j] == ' ')
                         {
                             // Make the move
-                            board[i, j] = opponent;
+                            board[i, j] = PlayerSymbol.OPPONENT;
 
                             // Call minimax recursively and choose the minimum value
                             best = Math.Min(best, Minnimax(board,
@@ -113,9 +111,9 @@
                 if (b[row, 0] == b[row, 1] &&
                     b[row, 1] == b[row, 2])
                 {
-                    if (b[row, 0] == ai)
+                    if (b[row, 0] == PlayerSymbol.AI)
                         return +10;
-                    else if (b[row, 0] == opponent)
+                    else if (b[row, 0] == PlayerSymbol.OPPONENT)
                         return -10;
                 }
             }
@@ -126,10 +124,10 @@
                 if (b[0, col] == b[1, col] &&
                     b[1, col] == b[2, col])
                 {
-                    if (b[0, col] == ai)
+                    if (b[0, col] == PlayerSymbol.AI)
                         return +10;
 
-                    else if (b[0, col] == opponent)
+                    else if (b[0, col] == PlayerSymbol.OPPONENT)
                         return -10;
                 }
             }
@@ -137,17 +135,17 @@
             // Checking for Diagonals for X or O victory.
             if (b[0, 0] == b[1, 1] && b[1, 1] == b[2, 2])
             {
-                if (b[0, 0] == ai)
+                if (b[0, 0] == PlayerSymbol.AI)
                     return +10;
-                else if (b[0, 0] == opponent)
+                else if (b[0, 0] == PlayerSymbol.OPPONENT)
                     return -10;
             }
 
             if (b[0, 2] == b[1, 1] && b[1, 1] == b[2, 0])
             {
-                if (b[0, 2] == ai)
+                if (b[0, 2] == PlayerSymbol.AI)
                     return +10;
-                else if (b[0, 2] == opponent)
+                else if (b[0, 2] == PlayerSymbol.OPPONENT)
                     return -10;
             }
 
@@ -173,7 +171,7 @@
                     if (board[i, j] == ' ')
                     {
                         // Make the move
-                        board[i, j] = ai;
+                        board[i, j] = PlayerSymbol.AI;
 
                         // compute evaluation function for this move.
                         int moveVal = Minnimax(board, 0, false);

@@ -8,8 +8,18 @@ body {
     background-color: #333;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Use the full height of the viewport */
+    margin: 0 auto;
+    text-align: center; /* Center-align the content within the container */
+    gap: 5px;
+}
+
 h1 {
-    text-align: center;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif; 
     color: #fff;
@@ -31,6 +41,9 @@ h1 {
     border-radius: 30px;
     background: #142A1F;
     opacity: 80;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
     .square:hover {
@@ -42,7 +55,16 @@ h1 {
     font-size: 5rem;
     text-align: center;
     font-weight: 800;
-    margin-top: 15%;
-    color: #43B0A6;
     font-family: 'Roboto', sans-serif;
+    color: #2E9982;
 }
+
+.message {
+    font-family: 'Montserrat', sans-serif;
+    color: #AFE79D; /* White text color */
+    padding: 10px;
+    width: 31rem; /* Same width as the board */
+    border: 2px solid #fff; /* White border around the message */
+    border-radius: 10px;
+}
+
