@@ -3,7 +3,7 @@
      @onmouseout="CollapseNavMenu">
     <nav class="nav-menu @(collapseNavMenu ? "collapsed" : "expand")">
         <div>
-            <NavLink class="nav-link test" href="https://rikampalkar.github.io/" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="https://rikampalkar.github.io/" Match="NavLinkMatch.All">
                 <span class="bi bi-house nav-item-icon" aria-hidden="true">
                     <span class="nav-item-text">Home</span>
                 </span>
@@ -41,6 +41,12 @@
         </div>
     </nav>
 </div>
+
+<style>
+    .nav-link {
+        margin-bottom: 10px;
+    }
+</style>
 
 @code {
     private bool collapseNavMenu = true;
