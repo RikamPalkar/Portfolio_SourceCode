@@ -64,10 +64,12 @@
     <Folder Include="Pages\TicTacToe\" />
     <Folder Include="Pages\TicTacToe\Resources\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="Pages\Snake\Resources\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Pages\TicTacToe\" />
     <None Remove="Pages\TicTacToe\Resources\" />
+    <None Remove="Pages\Snake\Resources\" />
   </ItemGroup>
 </Project>

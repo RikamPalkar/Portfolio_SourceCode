@@ -1,0 +1,59 @@
+@page "/snake"
+@inject IJSRuntime js
+
+<div class="container">
+
+    <!-- Header -->
+    <h1>Nostalgic Snake Game</h1>
+
+    <div class="score-info">
+        <div>
+            <span class="current-score">Current Score: @score.CurrentScore</span>
+        </div>
+        <div>
+            <span class="top-scores">Top Score: @score.TopScore</span>
+        </div>
+    </div>
+
+    <!-- Game board -->
+    <div class="snake-board"
+         tabindex="0"
+         @onkeydown="ControlSnakeDirection">
+        @for (int row = 0; row < 20; row++)
+        {
+            @for (int col = 0; col < 20; col++)
+            {
+                bool isSnakeCell = IsSnakeCell(row, col);
+                bool isSnakeHead = IsSnakeHead(row, col);
+                bool isFoodCell = IsFoodCell(row, col);
+
+                <div class="cell @(isSnakeCell && !isSnakeHead ? "snake-body" : "")">
+                    @if (isSnakeCell)
+                    {
+                        @if (isSnakeHead)
+                        {
+                            <span>🐲</span>
+                        }
+                        else
+                        {
+                            <span>⬤</span>
+                        }
+                    }
+                    @if (isFoodCell)
+                    {
+                        <span>🍎</span>
+                    }
+                </div>
+            }
+        }
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Nostalgic journey to take you back to the days of the iconic Nokia 3310.
+        <br />
+        Developed by <a href="https://www.linkedin.com/in/rikampalkar/" target="_blank" rel="noopener noreferrer">Rikam Palkar</a>,
+        <br />
+        Want to learn how to develop this, <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjY3IvggN-BAxVfs1YBHerlBBkQFnoECAoQAQ&url=https%3A%2F%2Flevelup.gitconnected.com%2Fstep-by-step-guide-to-develop-tic-tac-toe-ai-with-blazor-b11c194aac6b&usg=AOvVaw3LHM66BYTRpOaQJwE9NZsv&opi=89978449" target="_blank" rel="noopener noreferrer"> learn here</a>
+    </div>
+</div>

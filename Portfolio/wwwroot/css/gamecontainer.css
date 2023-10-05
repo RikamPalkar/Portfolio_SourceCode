@@ -1,0 +1,34 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Use the full height of the viewport */
+    margin: 0 auto;
+    text-align: center; /* Center-align the content within the container */
+    gap: 5px;
+}
+
+/* This is header of the game */
+h1 {
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; /* Text color for the heading */
+    margin-top: 10px;
+}
+
+/* This is footer of the game */
+.footer {
+    font-family: 'Montserrat', sans-serif;
+    color: #AFE79D; /* White text color */
+    padding: 10px;
+    width: 31rem; /* Same width as the board */
+    border: 2px solid #fff; /* White border around the message */
+    border-radius: 10px;
+}

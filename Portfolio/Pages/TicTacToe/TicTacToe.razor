@@ -2,8 +2,12 @@
 @inject IJSRuntime JS
 
 <div class="container">
-    <h1>Play TicTacToe with AI</h1>
-    <div class="board">
+
+    <!-- Header -->
+    <h1>Play TicTacToe With AI</h1>
+
+    <!-- Game board -->
+    <div class="tictactoe-board">
         @for (int i = 0; i < 3; i++)
         {
             int row = i;
@@ -17,12 +21,12 @@
             }
         }
     </div>
-    <p class="message">
-        AI opponent powered by the MinMax algorithm.
-        <br />
-        Developed by <a href="https://www.linkedin.com/in/rikampalkar/" target="_blank" rel="noopener noreferrer">Rikam Palkar</a>,
-        <br />
-        it combines strategy and fun for an engaging experience.
+
+    <!-- Footer -->
+    <p class="footer">
+        AI opponent powered by the MinMax algorithm.<br />
+        Developed by <a href="https://www.linkedin.com/in/rikampalkar/" target="_blank" rel="noopener noreferrer">Rikam Palkar</a>, <br />
+        Want to learn how to develop this, <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiHiY2s_96BAxVBsFYBHbEjC1sQFnoECBIQAQ&url=https%3A%2F%2Fbetterprogramming.pub%2Fdesign-a-snake-game-in-blazor-3c88106f0c2d%3Fsource%3Drss------programming-5&usg=AOvVaw16KBmzzOMyjgdN4biM59QJ&opi=89978449" target="_blank" rel="noopener noreferrer"> learn here</a>
     </p>
 </div>
 
