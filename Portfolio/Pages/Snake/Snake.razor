@@ -7,22 +7,18 @@
     <h1>Nostalgic Snake Game</h1>
 
     <div class="score-info">
-        <div>
-            <span class="current-score">Current Score: @score.CurrentScore</span>
-        </div>
-        <div>
-            <span class="top-scores">Top Score: @score.TopScore</span>
-        </div>
+        <div class="score">Current Score: @score.CurrentScore</div>
+        <div class="score">Top Score: @score.TopScore</div>
     </div>
 
     <!-- Game board -->
     <div class="snake-board"
          tabindex="0"
          @onkeydown="ControlSnakeDirection">
-        @for (int row = 0; row < 20; row++)
-        {
-            @for (int col = 0; col < 20; col++)
-            {
+         @for (int row = 0; row < 15; row++)
+         {
+             @for (int col = 0; col < 15; col++)
+             { 
                 bool isSnakeCell = IsSnakeCell(row, col);
                 bool isSnakeHead = IsSnakeHead(row, col);
                 bool isFoodCell = IsFoodCell(row, col);
@@ -44,16 +40,22 @@
                         <span>🍎</span>
                     }
                 </div>
-            }
-        }
+             }
+         }
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-        Nostalgic journey to take you back to the days of the iconic Nokia 3310.
-        <br />
-        Developed by <a href="https://www.linkedin.com/in/rikampalkar/" target="_blank" rel="noopener noreferrer">Rikam Palkar</a>,
-        <br />
-        Want to learn how to develop this, <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjY3IvggN-BAxVfs1YBHerlBBkQFnoECAoQAQ&url=https%3A%2F%2Flevelup.gitconnected.com%2Fstep-by-step-guide-to-develop-tic-tac-toe-ai-with-blazor-b11c194aac6b&usg=AOvVaw3LHM66BYTRpOaQJwE9NZsv&opi=89978449" target="_blank" rel="noopener noreferrer"> learn here</a>
+    <div class="footer-info">
+        <div class="footer-message">
+            Interested in creating your own Snake game?
+            <br />
+            Learn step-by-step in my articles:
+        </div>
+        <div class="footer-links">
+            <a href="https://www.c-sharpcorner.com/article/design-a-snake-game-in-blazor/" class="journal-text"><i class="bi bi-journal-text"></i></a>
+            <a href="https://medium.com/@@RikamPalkar/design-a-snake-game-in-blazor-3c88106f0c2d" class="medium">
+                <i class="bi bi-medium"></i>
+            </a>
+        </div>
     </div>
 </div>

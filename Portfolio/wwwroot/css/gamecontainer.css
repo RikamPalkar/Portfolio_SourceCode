@@ -9,26 +9,71 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh; /* Use the full height of the viewport */
+    text-align: center;
+    height: 80vh;
     margin: 0 auto;
-    text-align: center; /* Center-align the content within the container */
     gap: 5px;
 }
 
 /* This is header of the game */
 h1 {
-    margin-bottom: 10px;
+    font-size: 28px;
+    font-family: 'Raleway', sans-serif;
     font-family: 'Montserrat', sans-serif;
-    color: #fff; /* Text color for the heading */
-    margin-top: 10px;
+    color: #18d26e; /* Green color*/
+    width: 31rem;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 /* This is footer of the game */
-.footer {
-    font-family: 'Montserrat', sans-serif;
-    color: #AFE79D; /* White text color */
-    padding: 10px;
-    width: 31rem; /* Same width as the board */
-    border: 2px solid #fff; /* White border around the message */
-    border-radius: 10px;
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    width: 31rem;
+    height: 65px;
 }
+
+.footer-message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #18d26e;
+    padding: 10px;
+    width: 23rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 65px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Horizontally center the icons */
+    align-items: center; /* Vertically center the icons */
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    width: 8rem;
+    height: 65px;
+}
+
+    .footer-links a {
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        line-height: 1;
+        margin-right: 8px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+        .footer-links a:hover {
+            background: #18d26e;
+        }
