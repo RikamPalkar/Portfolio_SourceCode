@@ -2,15 +2,21 @@
     width: 31rem;
     height: 31rem;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid; /* Change display to grid */
+    grid-template-columns: repeat(3, 9.7rem); /* Specify column width */
+    grid-template-rows: repeat(3, 9.7rem); /* Specify row height */
+    gap: 5px; /* Add gap between cells */
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
-.square {
-    width: 10rem;
-    height: 10rem;
+.cell {
+    width: 100%; /* Set width to 100% to fill grid cell */
+    height: 100%; /* Set height to 100% to fill grid cell */
     border: 2px solid #fff;
-    margin-right: 4px;
     border-radius: 30px;
     background: #142A1F;
     opacity: 80;
@@ -19,7 +25,7 @@
     align-items: center; /* Center vertically */
 }
 
-    .square:hover {
+    .cell:hover {
         background: #022724;
         cursor: pointer;
     }
