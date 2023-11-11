@@ -16,6 +16,17 @@
     height: 45px;
 }
 
+.start-button {
+    font-size: 26px;
+    font-family: 'Raleway', sans-serif;
+    color: #18d26e;
+    background: rgba(0, 0, 0, 0.9);
+    border: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    width: 15.2rem;
+    height: 45px;
+}
+
 .snake-board {
     display: grid;
     grid-template-columns: repeat(15, 1fr); 

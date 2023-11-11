@@ -28,13 +28,14 @@ namespace Portfolio.Pages.Snake
 
         bool isGameOver;
 
+        bool isGameStart;
+
         #endregion
 
         #region [METHODS]
         protected override async Task OnInitializedAsync()
         {
             InitializeGame();
-            await StartGame();
         }
 
         private void InitializeGame()
@@ -50,6 +51,12 @@ namespace Portfolio.Pages.Snake
 
             // Generate the initial food
             GenerateFood();
+        }
+
+        private void StartTheGame()
+        {
+            isGameStart = !isGameStart;
+            StartGame();
         }
 
         private async Task StartGame()
@@ -78,25 +85,14 @@ namespace Portfolio.Pages.Snake
 
         private void ControlSnakeDirection(KeyboardEventArgs e)
         {
-            switch (e.Key)
+            snakeDirection = e.Key switch
             {
-                case "ArrowUp":
-
-                    snakeDirection = Direction.UP;
-                    break;
-                case "ArrowRight":
-
-                    snakeDirection = Direction.RIGHT;
-                    break;
-                case "ArrowDown":
-
-                    snakeDirection = Direction.DOWN;
-                    break;
-                case "ArrowLeft":
-
-                    snakeDirection = Direction.LEFT;
-                    break;
-            }
+                "ArrowUp" => Direction.UP,
+                "ArrowRight" => Direction.RIGHT,
+                "ArrowDown" => Direction.DOWN,
+                "ArrowLeft" => Direction.LEFT,
+                _ => throw new NotImplementedException()
+            };
         }
 
         // Update Snake position based on direction
@@ -155,10 +151,6 @@ namespace Portfolio.Pages.Snake
                         score.TopScore = score.CurrentScore;
                     }
                     ResetGame();
-                }
-                else
-                {
-                    await js.InvokeVoidAsync("navigateToWebsite", $"https://rikampalkar.github.io/");
                 }
             }
             isGameOver = false;
