@@ -4,8 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>115089ed-f9f4-4642-ba2e-8349267299b2</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>anycpu</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
     <Content Remove="C:\Users\e258490\.nuget\packages\bootstrap\5.3.2\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" />
     <Content Remove="C:\Users\e258490\.nuget\packages\bootstrap\5.3.2\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" />
