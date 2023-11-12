@@ -1,18 +1,21 @@
 ﻿@page "/ppt"
+@inject IJSRuntime JS;
 <div class="iframe-container">
     <BusyIndicator IsLoading="isLoading" />
-    <iframe src="https://onedrive.live.com/embed?resid=651BB1024BD1BBB0%216551&authkey=!AO4kW1ZdL1xKqpc&em=2"
+    <iframe id="pptFrame"
+            src="https://onedrive.live.com/embed?resid=651BB1024BD1BBB0%216551&authkey=!AO4kW1ZdL1xKqpc&em=2"
             frameborder="0"
             scrolling="no">
     </iframe>
 </div>
 
 @code {
+
     private bool isLoading = true;
 
-    protected override async Task OnInitializedAsync()
-    {
-        await Task.Delay(1000); 
-        isLoading = false;
+        protected override async Task OnInitializedAsync()
+        {
+            await JS.InvokeVoidAsync("ShowPPTDialog");
+            isLoading = false;
+        }
     }
-}
