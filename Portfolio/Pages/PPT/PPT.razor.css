@@ -13,3 +13,13 @@
         height: 100%;
         background: rgba(0, 0, 0, 0.9);
     }
+
+@media screen and (max-width: 768px) {
+    .iframe-container {
+        height: auto;
+    }
+
+        .iframe-container iframe {
+            height: 36vh;
+        }
+}
