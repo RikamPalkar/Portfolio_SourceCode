@@ -13,14 +13,37 @@
 
 .nav-menu {
     overflow: hidden;
+    height: 100%; /* Set a fixed height for the sidebar */
 }
 
-.collapsed  {
+.collapsed {
     width: 25px; /* Width when collapsed */
 }
 
 .expand {
-    width: 90px; /* Width when expand */
+    width: 110px; /* Width when expanded */
+}
+
+
+.nav-item-text {
+    visibility: hidden; /* Initially hidden */
+    position: absolute;
+    margin-left: 0.5rem;
+    font-size: 16px;
+    margin-top: 4px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Added transform property for scaling animation */
+    transform-origin: left center; /* Set the scaling origin to the left center */
+}
+
+.expand .nav-item-text { /* Visible when hover over sidebar */
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.nav-link:hover .nav-item-text { /* Visible when hover over text */
+    opacity: 1;
+    transform: scale(1.2); /* Increase the scale on hover for a bigger text effect */
+    color: #DAF7A6; /* Highlighted color */
 }
 
 .nav-item {
@@ -29,27 +52,19 @@
     justify-content: flex-start;
 }
 
-    .nav-item-icon {
-        color: white;
-        font-size: 20px;
-    }
+.nav-item-icon {
+    color: white;
+    font-size: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Added transform property for scaling animation */
+    transform-origin: left center; /* Set the scaling origin to the left center */
+    margin-bottom: 5px;
+}
 
-    .nav-item-text {
-        visibility: hidden; /*Toggles below on the event of nav-link hover*/
-        position: absolute;
-        transition: opacity 0.3s ease;
-        margin-left: 0.5rem;
-        font-size: 16px;
-        margin-top: 4px;
-    }
-
-.nav-link:hover .nav-item-text {
-    visibility: visible;
-    opacity: 1;
+.nav-link:hover .nav-item-icon {
+    color: #DAF7A6;
+    transform: scale(1.2); /* Increase the scale on hover for a bigger icon effect */
 }
 
 .nav-link > * {
     align-self: flex-start;
 }
-
-
