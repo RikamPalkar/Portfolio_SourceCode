@@ -23,3 +23,6 @@ window.ShowPPTDialog = () => {
     });
 }
 
+window.getWindowWidth = function () {
+    return window.innerWidth;
+};

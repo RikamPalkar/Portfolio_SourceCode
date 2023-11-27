@@ -24,7 +24,6 @@
     width: 110px; /* Width when expanded */
 }
 
-
 .nav-item-text {
     visibility: hidden; /* Initially hidden */
     position: absolute;
@@ -67,4 +66,66 @@
 
 .nav-link > * {
     align-self: flex-start;
+}
+
+/* Mobile device Hamburger menu */
+.hamburger-icon {
+    cursor: pointer;
+    display: none; /* Initially hidden on larger screens */
+}
+
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: block; /* Display on smaller screens */
+        margin-left: 10px;
+        margin-top: 8px;
+    }
+
+    .hide-sidebar .nav-item-text {
+        visibility: hidden;
+    }
+
+    .show-sidebar .nav-item-text {
+        visibility: visible;
+    }
+
+    .hide-sidebar {
+        visibility: hidden;
+    }
+
+    .show-sidebar {
+        visibility: visible;
+    }
+
+    .nav-menu {
+        height: 0%;
+        overflow:hidden;
+    }
+
+    /* Additional styles for the hamburger bars */
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+        border-radius: 2px;
+    }
+
+    .hamburger-icon.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-icon.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-icon.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .expand .nav-item-text { /* Visible when hover over sidebar */
+        opacity: 1;
+        font-size: 16px;
+    }
 }
