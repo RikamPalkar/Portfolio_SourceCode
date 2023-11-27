@@ -91,6 +91,7 @@
 
     .hide-sidebar {
         visibility: hidden;
+        height: 0px;
     }
 
     .show-sidebar {
@@ -99,7 +100,7 @@
 
     .nav-menu {
         height: 0%;
-        overflow:hidden;
+        overflow: hidden;
     }
 
     /* Additional styles for the hamburger bars */
